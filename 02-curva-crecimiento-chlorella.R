@@ -157,9 +157,50 @@ ggsave("02_velocidad_crecimiento_chlorella.png", grafica_mu,
 # --------------------------------------------------------------------------
 # Interpretación
 # --------------------------------------------------------------------------
-# - La luz azul produce una mayor velocidad de crecimiento (mu) y una mayor
-#   densidad final que la luz roja, lo que se ve en la curva y en mu.
-# - El tiempo de duplicación es menor bajo luz azul.
+# Gráfica 1: Curva de crecimiento (escala logarítmica)
+# - Eje X: tiempo, en días (0 a 10).
+# - Eje Y: densidad celular, en células/mL. La escala es logarítmica
+#   (cada marca multiplica por 10), por eso la fase exponencial se ve
+#   como una línea recta: en escala logarítmica, un crecimiento
+#   exponencial es una recta. Las barras verticales son la desviación
+#   estándar (n = 3): muestran cuánto varían las réplicas.
+# - Lo que se aprecia: las dos curvas suben con el tiempo, pero la azul
+#   sube más rápido y llega más alto (cerca de 2 × 10^7 células/mL) que
+#   la roja (cerca de 1 × 10^7). Al principio las dos están juntas; se
+#   separan a partir del día 2.
+# - Qué significa: la luz azul produce más células (mayor crecimiento)
+#   que la luz roja en este experimento.
+#
+# Gráfica 2: Velocidad específica de crecimiento (mu)
+# - Eje X: condición de luz (Azul o Rojo).
+# - Eje Y: velocidad específica de crecimiento (mu), en 1/día. Es la
+#   pendiente de la recta en escala logarítmica durante la fase
+#   exponencial (días 2-6). Un mu de 0.73 1/día significa que la
+#   población crece un 73% por día (en escala logarítmica); un mu mayor
+#   es un crecimiento más rápido.
+# - Lo que se aprecia: la barra azul (mu = 0.73) es más alta que la roja
+#   (mu = 0.55). El número está escrito encima de cada barra.
+# - Qué significa: bajo luz azul el cultivo crece más rápido que bajo
+#   luz roja. El tiempo de duplicación es menor bajo luz azul (0.95 días
+#   contra 1.26 días).
+#
 # - En un experimento real, estas diferencias se confirmarían con una
 #   prueba estadística (por ejemplo, prueba t o ANOVA). Eso es justo lo
 #   que veremos en las próximas lecciones.
+# - Nota: este conjunto de datos solo tiene luz azul y luz roja. No
+#   incluye un control con luz blanca, así que la comparación es entre
+#   azul y roja, no contra un control.
+
+# --------------------------------------------------------------------------
+# Qué aprendimos
+# --------------------------------------------------------------------------
+# - La velocidad específica de crecimiento (mu) no se supone: se calcula
+#   A PARTIR DE LOS DATOS, con una regresión lineal del logaritmo de la
+#   densidad contra el tiempo en la fase exponencial.
+# - En escala logarítmica, la fase exponencial se ve como una recta, y su
+#   pendiente es mu (en 1/día). Un mu mayor significa crecimiento más rápido.
+# - La luz azul da un mu mayor (0.73) y un tiempo de duplicación menor
+#   (0.95 días) que la luz roja (mu = 0.55, duplicación 1.26 días).
+# - Cada gráfico necesita su interpretación: qué es cada eje (con unidades),
+#   qué patrón se ve y qué significa, para que cualquiera pueda leerlo sin
+#   que se lo expliquen.

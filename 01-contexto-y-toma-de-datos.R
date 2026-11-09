@@ -170,6 +170,55 @@ ggsave("01_exploracion_caja.png", grafica_caja,
        width = 16, height = 12, units = "cm", dpi = 300)
 
 # --------------------------------------------------------------------------
+# Interpretación: Gráfica 1 (OD680 contra el tiempo)
+# --------------------------------------------------------------------------
+# - Eje X: tiempo, en días (0 a 10). Es el tiempo desde que se inició el
+#   cultivo.
+# - Eje Y: absorbancia a 680 nm (OD680), adimensional (no tiene unidades:
+#   es una medida de cuánta luz absorbe el cultivo, y crece cuando hay más
+#   células). Un OD680 de 0 significa cultivo casi sin células; un OD680
+#   de 2 significa un cultivo denso.
+# - Lo que se aprecia: los puntos (cada réplica) suben con el tiempo y la
+#   línea (la media por día) también sube. La curva azul (luz azul) sube
+#   más rápido y llega más alto que la roja. Al principio (días 0-1) las
+#   dos están casi en cero; después se separan.
+# - Qué significa: el cultivo crece con el tiempo y la luz azul produce
+#   más crecimiento que la luz roja en este experimento.
+#
+# Interpretación: Gráfica 2 (distribución de OD680 por luz)
+# --------------------------------------------------------------------------
+# - Eje X: condición de luz (Azul o Rojo). No es una cantidad, son dos
+#   grupos.
+# - Eje Y: absorbancia a 680 nm (OD680), adimensional, igual que arriba.
+# - Lo que se aprecia: cada caja resume todas las mediciones de un
+#   tratamiento. La línea dentro de la caja es la mediana (el valor del
+#   medio). La caja cubre el 50% central de los datos. Los puntos son las
+#   mediciones reales. La caja azul está más arriba y es más alta que la
+#   roja: sus valores son mayores y más dispersos.
+# - Qué significa: en conjunto, la luz azul da valores de OD680 más altos
+#   que la luz roja. La dispersión (el ancho de la caja y de los puntos)
+#   muestra que los valores varían entre días y réplicas, lo cual es
+#   normal porque el cultivo crece con el tiempo.
+#
+# Nota: este conjunto de datos solo tiene luz azul y luz roja. No incluye
+# un control con luz blanca, así que la comparación es entre azul y roja,
+# no contra un control.
+
+# --------------------------------------------------------------------------
+# Qué aprendimos
+# --------------------------------------------------------------------------
+# - Los datos se toman en el laboratorio como mediciones reales (OD680 por
+#   día y por réplica) y se ordenan en formato tidy para poder analizarlos.
+# - Antes de analizar, hay que mirar los datos: un gráfico de puntos contra
+#   el tiempo muestra el crecimiento, y un gráfico de caja compara los
+#   tratamientos.
+# - La OD680 es adimensional y crece cuando hay más células; por eso sirve
+#   para seguir el crecimiento del cultivo.
+# - La luz azul produce más crecimiento que la luz roja en este experimento,
+#   pero sin un control con luz blanca no podemos decir si alguna de las dos
+#   es mejor que la condición normal.
+
+# --------------------------------------------------------------------------
 # Qué sigue (Lección 02)
 # --------------------------------------------------------------------------
 # En la Lección 02 tomaremos este archivo (datos_chlorella.csv),
