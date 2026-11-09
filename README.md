@@ -29,6 +29,17 @@ install.packages("tidyverse")
 | 01 | `01-contexto-y-toma-de-datos.R` | El experimento, cómo se toman los datos en el laboratorio, datos ordenados (tidy data) y primer análisis exploratorio. |
 | 02 | `02-curva-crecimiento-chlorella.R` | Curva de crecimiento de *Chlorella vulgaris*, velocidad específica de crecimiento (mu) y gráficas claras. |
 
+## Biología celular
+
+Lecciones de biología celular con datos, en el mismo formato de la serie
+(datos primero, todo calculado a partir de ellos). No forman parte de la
+numeración secuencial de las lecciones 01-08: son una sección aparte.
+
+| Lección | Tema |
+|---|---|
+| `biologia-celular-estructura-y-funcion.R` | Estructura y función celular: mediciones del diámetro de *Chlorella vulgaris*, volumen de la célula a partir de los datos y tamaño típico de los organelos comparado con la célula. Datos: `datos_diametros_chlorella.csv`. |
+| `eucariotas-y-procariotas.R` | Comparación cuantitativa eucariota contra procariota: volumen, superficie, relación superficie/volumen y tamaño del genoma de *E. coli*, *S. aureus*, *S. cerevisiae*, *Chlorella vulgaris* y una célula animal típica. Datos: `datos_celulas_comparacion.csv`. |
+
 ## Próximas lecciones
 
 La serie continúa con visualización y análisis avanzados, siempre con
@@ -58,7 +69,11 @@ problemas reales del laboratorio y de la academia:
 
 Los datos de las lecciones son simulados con fines didácticos, con valores
 realistas para el laboratorio. La lección 01 genera el archivo
-`datos_chlorella.csv`, que usa la lección 02.
+`datos_chlorella.csv`, que usa la lección 02. Las lecciones de biología
+celular usan sus propios archivos: `datos_diametros_chlorella.csv` (30
+mediciones del diámetro de *Chlorella vulgaris*, dentro del rango publicado
+de 2-10 µm) y `datos_celulas_comparacion.csv` (tamaños y genomas publicados
+de cinco células).
 
 ## Licencia
 
