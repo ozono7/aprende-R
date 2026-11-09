@@ -10,7 +10,8 @@
 # Serie "Aprende R" — Lección 01
 #
 # Descripción: Primera lección de la serie. Se presenta el experimento
-#   (crecimiento de Chlorella vulgaris bajo luz LED azul y roja), se leen
+#   (crecimiento de Chlorella vulgaris bajo luz LED azul, blanca
+#   (control) y roja), se leen
 #   los datos tal como se registraron en el laboratorio (archivo
 #   datos_chlorella_ancho.csv), se ordenan en R (datos ordenados o
 #   "tidy data") y se hace un primer análisis exploratorio: resumen por
@@ -39,11 +40,13 @@ library(tidyverse)
 # 2. El experimento (contexto)
 # --------------------------------------------------------------------------
 # Pregunta: ¿La luz LED azul o la luz LED roja produce un mayor crecimiento
-#   de la microalga Chlorella vulgaris?
+#   de la microalga Chlorella vulgaris, comparadas con el control con luz
+#   blanca?
 #
 # Diseño:
 #   - Organismo: Chlorella vulgaris (microalga verde).
-#   - Tratamientos: luz LED azul y luz LED roja (2 condiciones).
+#   - Tratamientos: luz LED azul, luz LED blanca (control) y luz LED
+#     roja (3 condiciones).
 #   - Réplicas: 3 cultivos independientes por condición (n = 3).
 #   - Duración: 10 días, con una medición diaria.
 #   - Variable medida: absorbancia a 680 nm (OD680), que es proporcional
