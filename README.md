@@ -1,8 +1,7 @@
 # Aprende R
 
 Material académico para estudiantes, con problemas cotidianos de las áreas
-químico-científicas y académicas, resueltos en R con tidyverse y gráficas
-al estilo de las revistas científicas.
+químico-científicas y académicas, resueltos en R con tidyverse y gráficas claras.
 
 **Autor:** Dr. José Juan Torres Martínez
 **Docente de Ciencias Químicas**
@@ -28,7 +27,7 @@ install.packages("tidyverse")
 | # | Lección | Tema |
 |---|---------|------|
 | 01 | `01-contexto-y-toma-de-datos.R` | El experimento, cómo se toman los datos en el laboratorio, datos ordenados (tidy data) y primer análisis exploratorio. |
-| 02 | `02-curva-crecimiento-chlorella.R` | Curva de crecimiento de *Chlorella vulgaris*, velocidad específica de crecimiento (mu) y gráficas estilo revista científica. |
+| 02 | `02-curva-crecimiento-chlorella.R` | Curva de crecimiento de *Chlorella vulgaris*, velocidad específica de crecimiento (mu) y gráficas claras. |
 
 ## Próximas lecciones
 
