@@ -52,7 +52,7 @@ library(tidyverse)
 #
 # Variables:
 #   - dia: día del cultivo (0 a 10).
-#   - luz: condición de luz (Azul o Rojo).
+#   - luz: condición de luz (Azul, Blanco o Rojo).
 #   - replica: número de réplica (1, 2 o 3).
 #   - OD680: absorbancia a 680 nm (sin unidades).
 
@@ -124,7 +124,7 @@ grafica_puntos <- ggplot(datos, aes(x = dia, y = OD680, color = luz)) +
     linewidth = 1
   ) +
   scale_color_manual(
-    values = c("Azul" = "#2166ac", "Rojo" = "#b2182b")
+    values = c("Azul" = "#2166ac", "Blanco" = "#E69F00", "Rojo" = "#b2182b")
   ) +
   labs(
     x = "Tiempo (días)",
@@ -142,7 +142,7 @@ grafica_caja <- ggplot(datos, aes(x = luz, y = OD680, fill = luz)) +
   geom_boxplot(alpha = 0.7) +
   geom_jitter(width = 0.15, size = 1.5, alpha = 0.6) +
   scale_fill_manual(
-    values = c("Azul" = "#2166ac", "Rojo" = "#b2182b")
+    values = c("Azul" = "#2166ac", "Blanco" = "#E69F00", "Rojo" = "#b2182b")
   ) +
   labs(
     x = "Luz LED",
@@ -179,30 +179,30 @@ ggsave("01_exploracion_caja.png", grafica_caja,
 #   células). Un OD680 de 0 significa cultivo casi sin células; un OD680
 #   de 2 significa un cultivo denso.
 # - Lo que se aprecia: los puntos (cada réplica) suben con el tiempo y la
-#   línea (la media por día) también sube. La curva azul (luz azul) sube
-#   más rápido y llega más alto que la roja. Al principio (días 0-1) las
-#   dos están casi en cero; después se separan.
-# - Qué significa: el cultivo crece con el tiempo y la luz azul produce
-#   más crecimiento que la luz roja en este experimento.
+#   línea (la media por día) también sube. La curva azul sube más rápido
+#   y llega más alto; la blanca (control, luz blanca) queda en medio y
+#   la roja queda abajo. Al principio (días 0-1) las tres están casi en
+#   cero; después se separan.
+# - Qué significa: el cultivo crece con el tiempo. La luz azul produce
+#   más crecimiento que el control con luz blanca, y la luz roja produce
+#   menos que el control.
 #
 # Interpretación: Gráfica 2 (distribución de OD680 por luz)
 # --------------------------------------------------------------------------
-# - Eje X: condición de luz (Azul o Rojo). No es una cantidad, son dos
-#   grupos.
+# - Eje X: condición de luz (Azul, Blanco o Rojo). No es una cantidad,
+#   son tres grupos.
 # - Eje Y: absorbancia a 680 nm (OD680), adimensional, igual que arriba.
 # - Lo que se aprecia: cada caja resume todas las mediciones de un
 #   tratamiento. La línea dentro de la caja es la mediana (el valor del
 #   medio). La caja cubre el 50% central de los datos. Los puntos son las
-#   mediciones reales. La caja azul está más arriba y es más alta que la
-#   roja: sus valores son mayores y más dispersos.
+#   mediciones. La caja azul está más arriba que la blanca (control) y
+#   la roja está más abajo: la azul tiene los valores mayores, la blanca
+#   queda en medio y la roja los menores.
 # - Qué significa: en conjunto, la luz azul da valores de OD680 más altos
-#   que la luz roja. La dispersión (el ancho de la caja y de los puntos)
+#   que el control con luz blanca, y la luz roja da valores más bajos que
+#   el control. La dispersión (el ancho de la caja y de los puntos)
 #   muestra que los valores varían entre días y réplicas, lo cual es
 #   normal porque el cultivo crece con el tiempo.
-#
-# Nota: este conjunto de datos solo tiene luz azul y luz roja. No incluye
-# un control con luz blanca, así que la comparación es entre azul y roja,
-# no contra un control.
 
 # --------------------------------------------------------------------------
 # Qué aprendimos
@@ -214,9 +214,8 @@ ggsave("01_exploracion_caja.png", grafica_caja,
 #   tratamientos.
 # - La OD680 es adimensional y crece cuando hay más células; por eso sirve
 #   para seguir el crecimiento del cultivo.
-# - La luz azul produce más crecimiento que la luz roja en este experimento,
-#   pero sin un control con luz blanca no podemos decir si alguna de las dos
-#   es mejor que la condición normal.
+# - La luz azul produce más crecimiento que el control con luz blanca, y
+#   la luz roja produce menos que el control.
 
 # --------------------------------------------------------------------------
 # Qué sigue (Lección 02)
