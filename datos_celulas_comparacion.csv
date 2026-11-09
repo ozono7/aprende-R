@@ -1,0 +1,6 @@
+organismo,tipo_celular,forma,diametro_um,largo_um,diametro_min_um,diametro_max_um,genoma_Mbp,genes_aprox,nucleo,cloroplasto,mitocondria,ribosoma
+Escherichia coli,Procariota,baston,0.5,2.0,0.25,1.0,4.64,4300,No,No,No,70S
+Staphylococcus aureus,Procariota,coco,1.0,,0.5,1.0,2.90,2600,No,No,No,70S
+Saccharomyces cerevisiae,Eucariota,esfera,5.0,,5.0,10.0,12.1,6000,Si,No,Si,80S
+Chlorella vulgaris,Eucariota,esfera,5.0,,2.0,10.0,37.34,,Si,Si,Si,80S
+Celula animal tipica,Eucariota,esfera,20.0,,10.0,100.0,3200.0,21000,Si,No,Si,80S
