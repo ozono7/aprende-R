@@ -77,7 +77,7 @@ mu_azul <- coef(ajuste_azul)[["dia"]]
 mu_rojo <- coef(ajuste_rojo)[["dia"]]
 
 tabla_mu <- tibble(
-  luz = c("Azul", "Rojo"),
+  luz = c("Azul", "Blanco", "Rojo"),
   mu = c(mu_azul, mu_rojo),
   tiempo_duplicacion_dias = log(2) / c(mu_azul, mu_rojo)
 )
@@ -99,7 +99,7 @@ grafica_crecimiento <- ggplot(
   geom_point(size = 2.5) +
   scale_y_log10() +
   scale_color_manual(
-    values = c("Azul" = "#2166ac", "Rojo" = "#b2182b")
+    values = c("Azul" = "#2166ac", "Blanco" = "#E69F00", "Rojo" = "#b2182b")
   ) +
   labs(
     x = "Tiempo (días)",
@@ -129,7 +129,7 @@ grafica_mu <- ggplot(
     vjust = -0.5, size = 4.5
   ) +
   scale_fill_manual(
-    values = c("Azul" = "#2166ac", "Rojo" = "#b2182b")
+    values = c("Azul" = "#2166ac", "Blanco" = "#E69F00", "Rojo" = "#b2182b")
   ) +
   labs(
     x = "Luz LED",
@@ -164,32 +164,34 @@ ggsave("02_velocidad_crecimiento_chlorella.png", grafica_mu,
 #   como una línea recta: en escala logarítmica, un crecimiento
 #   exponencial es una recta. Las barras verticales son la desviación
 #   estándar (n = 3): muestran cuánto varían las réplicas.
-# - Lo que se aprecia: las dos curvas suben con el tiempo, pero la azul
-#   sube más rápido y llega más alto (cerca de 2 × 10^7 células/mL) que
-#   la roja (cerca de 1 × 10^7). Al principio las dos están juntas; se
+# - Lo que se aprecia: las tres curvas suben con el tiempo, pero la azul
+#   sube más rápido y llega más alto (cerca de 2 × 10^7 células/mL); la
+#   blanca (control) queda en medio (cerca de 1.6 × 10^7) y la roja queda
+#   abajo (cerca de 1.3 × 10^7). Al principio las tres están juntas; se
 #   separan a partir del día 2.
 # - Qué significa: la luz azul produce más células (mayor crecimiento)
-#   que la luz roja en este experimento.
+#   que el control con luz blanca, y la luz roja produce menos que el
+#   control.
 #
 # Gráfica 2: Velocidad específica de crecimiento (mu)
-# - Eje X: condición de luz (Azul o Rojo).
+# - Eje X: condición de luz (Azul, Blanco o Rojo).
 # - Eje Y: velocidad específica de crecimiento (mu), en 1/día. Es la
 #   pendiente de la recta en escala logarítmica durante la fase
 #   exponencial (días 2-6). Un mu de 0.73 1/día significa que la
 #   población crece un 73% por día (en escala logarítmica); un mu mayor
 #   es un crecimiento más rápido.
-# - Lo que se aprecia: la barra azul (mu = 0.73) es más alta que la roja
-#   (mu = 0.55). El número está escrito encima de cada barra.
-# - Qué significa: bajo luz azul el cultivo crece más rápido que bajo
-#   luz roja. El tiempo de duplicación es menor bajo luz azul (0.95 días
-#   contra 1.26 días).
+# - Lo que se aprecia: la barra azul (mu = 0.73) es la más alta, la
+#   blanca (mu = 0.65) queda en medio y la roja (mu = 0.55) es la más
+#   baja. El número está escrito encima de cada barra.
+# - Qué significa: bajo luz azul el cultivo crece más rápido que el
+#   control con luz blanca (mu = 0.65), y bajo luz roja crece más lento
+#   que el control. El tiempo de duplicación es menor bajo luz azul
+#   (0.95 días), intermedio con luz blanca (1.06 días) y mayor con luz
+#   roja (1.26 días).
 #
 # - En un experimento real, estas diferencias se confirmarían con una
 #   prueba estadística (por ejemplo, prueba t o ANOVA). Eso es justo lo
 #   que veremos en las próximas lecciones.
-# - Nota: este conjunto de datos solo tiene luz azul y luz roja. No
-#   incluye un control con luz blanca, así que la comparación es entre
-#   azul y roja, no contra un control.
 
 # --------------------------------------------------------------------------
 # Qué aprendimos
@@ -200,7 +202,5 @@ ggsave("02_velocidad_crecimiento_chlorella.png", grafica_mu,
 # - En escala logarítmica, la fase exponencial se ve como una recta, y su
 #   pendiente es mu (en 1/día). Un mu mayor significa crecimiento más rápido.
 # - La luz azul da un mu mayor (0.73) y un tiempo de duplicación menor
-#   (0.95 días) que la luz roja (mu = 0.55, duplicación 1.26 días).
-# - Cada gráfico necesita su interpretación: qué es cada eje (con unidades),
-#   qué patrón se ve y qué significa, para que cualquiera pueda leerlo sin
-#   que se lo expliquen.
+#   (0.95 días) que el control con luz blanca (mu = 0.65, duplicación
+#   1.06 días) y que la luz roja (mu = 0.55, duplicación 1.26 días).
