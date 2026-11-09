@@ -15,9 +15,7 @@
 #   celular (células/mL) con la calibración, se calcula la velocidad
 #   específica de crecimiento (mu) en la fase exponencial A PARTIR DE LOS
 #   DATOS (regresión lineal de ln(densidad) contra tiempo) y se grafica la
-#   curva de crecimiento usando
-#   tidyverse (ggplot2). Nada está dado de antemano: mu sale de las
-#   mediciones, no de un valor supuesto.
+#   curva de crecimiento usando tidyverse (ggplot2).
 #
 # Objetivos de aprendizaje:
 #   - Leer datos ordenados con read_csv().
