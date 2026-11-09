@@ -90,7 +90,7 @@ print(resumen)
 #   A = 4 * pi * r^2
 # Y la relación superficie/volumen es:
 #   A/V = 3 / r
-# Nada de esto se supone: el radio sale del diámetro medio medido.
+# El radio es el diámetro medio medido dividido entre 2.
 
 diametro_medio <- resumen$media_um
 radio_um <- diametro_medio / 2

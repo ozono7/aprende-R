@@ -37,9 +37,7 @@
 #   37.34 Mbp (cepa UTEX 395, Guarnieri et al., 2018); S. cerevisiae
 #   tiene un genoma de 12.1 Mbp; el genoma humano tiene 3200 Mbp.
 #   Los diámetros típicos de la levadura (5 µm) y de la célula animal
-#   (20 µm) son valores típicos de libros de texto. El número de genes
-#   de Chlorella vulgaris no se incluye porque varía entre cepas y no
-#   se verificó un valor único.
+#   (20 µm) son valores típicos de libros de texto.
 # ==========================================================================
 
 # --------------------------------------------------------------------------
@@ -89,7 +87,7 @@ print(datos)
 #   A = 2 * pi * r * (largo - 2*r) + 4 * pi * r^2
 # con r = diámetro / 2. El volumen, la superficie y la relación
 # superficie/volumen se calculan en R a partir del diámetro y del largo
-# de la tabla; ningún valor está dado de antemano.
+# de la tabla.
 
 datos <- datos %>%
   mutate(

@@ -226,6 +226,4 @@ ggsave("01_exploracion_caja.png", grafica_caja,
 # En la Lección 02 tomaremos este archivo (datos_chlorella.csv),
 # convertiremos la OD680 a densidad celular (células/mL) con la
 # calibración, calcularemos la velocidad específica de crecimiento (mu)
-# A PARTIR DE LOS DATOS, y graficaremos la curva de crecimiento. Nada de
-# lo que calcularemos está dado de
-# antemano: todo sale de estas mediciones.
+# A PARTIR DE LOS DATOS, y graficaremos la curva de crecimiento.
