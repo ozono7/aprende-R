@@ -110,10 +110,10 @@ print(resumen)
 # 6. Revisión de calidad: valores faltantes y valores fuera de rango
 # --------------------------------------------------------------------------
 # ¿Hay valores faltantes? (debe ser 0)
-sum(is.na(datos$OD680))
+print(sum(is.na(datos$OD680)))
 
 # ¿Hay valores fuera de rango? (OD680 debe estar entre 0 y 3)
-filter(datos, OD680 < 0 | OD680 > 3)
+print(filter(datos, OD680 < 0 | OD680 > 3))
 
 # --------------------------------------------------------------------------
 # 7. Exploración gráfica (antes de analizar, hay que mirar los datos)
