@@ -1,5 +1,6 @@
 # ==========================================================================
-# 02. Curva de crecimiento de Chlorella vulgaris bajo luz LED azul y roja
+# 02. Curva de crecimiento de Chlorella vulgaris bajo luz LED azul,
+#   blanca (control) y roja
 # ==========================================================================
 # Autor: Dr. José Juan Torres Martínez
 # Docente de Ciencias Químicas
@@ -22,7 +23,8 @@
 #   - Leer datos ordenados con read_csv().
 #   - Convertir unidades con una calibración (OD680 a células/mL).
 #   - Calcular la velocidad específica de crecimiento (mu).
-#   - Graficar curvas de crecimiento con ggplot2 al estilo científico.
+#   - Graficar curvas de crecimiento con ggplot2, con gráficas claras
+#     y bien presentadas.
 #
 # Datos: archivo datos_chlorella.csv, generado en la Lección 01.
 #   Si no lo tienes, corre primero la Lección 01.
@@ -68,18 +70,23 @@ ajuste_azul <- lm(
   log(densidad) ~ dia,
   data = filter(datos, luz == "Azul", dia >= 2, dia <= 6)
 )
+ajuste_blanco <- lm(
+  log(densidad) ~ dia,
+  data = filter(datos, luz == "Blanco", dia >= 2, dia <= 6)
+)
 ajuste_rojo <- lm(
   log(densidad) ~ dia,
   data = filter(datos, luz == "Rojo", dia >= 2, dia <= 6)
 )
 
 mu_azul <- coef(ajuste_azul)[["dia"]]
+mu_blanco <- coef(ajuste_blanco)[["dia"]]
 mu_rojo <- coef(ajuste_rojo)[["dia"]]
 
 tabla_mu <- tibble(
   luz = c("Azul", "Blanco", "Rojo"),
-  mu = c(mu_azul, mu_rojo),
-  tiempo_duplicacion_dias = log(2) / c(mu_azul, mu_rojo)
+  mu = c(mu_azul, mu_blanco, mu_rojo),
+  tiempo_duplicacion_dias = log(2) / c(mu_azul, mu_blanco, mu_rojo)
 )
 
 print(tabla_mu)
@@ -177,9 +184,10 @@ ggsave("02_velocidad_crecimiento_chlorella.png", grafica_mu,
 # - Eje X: condición de luz (Azul, Blanco o Rojo).
 # - Eje Y: velocidad específica de crecimiento (mu), en 1/día. Es la
 #   pendiente de la recta en escala logarítmica durante la fase
-#   exponencial (días 2-6). Un mu de 0.73 1/día significa que la
-#   población crece un 73% por día (en escala logarítmica); un mu mayor
-#   es un crecimiento más rápido.
+#   exponencial (días 2-6). Mu es una velocidad instantánea: en un día de
+#   fase exponencial la población se multiplica por e^mu (con mu = 0.73
+#   1/día, se multiplica por 2.08 en un día, es decir, se duplica en
+#   0.95 días). Un mu mayor es un crecimiento más rápido.
 # - Lo que se aprecia: la barra azul (mu = 0.73) es la más alta, la
 #   blanca (mu = 0.65) queda en medio y la roja (mu = 0.55) es la más
 #   baja. El número está escrito encima de cada barra.
