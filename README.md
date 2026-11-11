@@ -28,6 +28,7 @@ install.packages("tidyverse")
 |---|---------|------|
 | 01 | `01-contexto-y-toma-de-datos.R` | El experimento, cómo se toman los datos en el laboratorio, datos ordenados (tidy data) y primer análisis exploratorio. |
 | 02 | `02-curva-crecimiento-chlorella.R` | Curva de crecimiento de *Chlorella vulgaris*, velocidad específica de crecimiento (mu) y gráficas claras. |
+| 03 | `03-diseno-de-experimentos.R` | Diseño de experimentos: completamente al azar, bloques al azar y factorial; cómo elegir el diseño según la pregunta. |
 
 ## Biología celular
 
@@ -45,7 +46,6 @@ numeración secuencial de las lecciones 01-08: son una sección aparte.
 La serie continúa con visualización y análisis avanzados, siempre con
 problemas reales del laboratorio y de la academia:
 
-- **03 — Diseño de experimentos:** diseño completamente al azar, bloques al azar y factorial; cómo elegir el diseño según la pregunta.
 - **04 — ANOVA de una vía:** comparar el crecimiento entre condiciones de luz.
 - **05 — Prueba de Dunnett:** comparar cada tratamiento contra un control.
 - **06 — Curva de calibración y regresión lineal:** construir una curva de calibración, R², límite de detección y cuantificación.
@@ -74,6 +74,15 @@ celular usan sus propios archivos: `datos_diametros_chlorella.csv` (30
 mediciones del diámetro de *Chlorella vulgaris*, dentro del rango publicado
 de 2-10 µm) y `datos_celulas_comparacion.csv` (tamaños y genomas publicados
 de cinco células).
+
+La lección 03 usa tres archivos con las mediciones por unidad
+ experimental: `datos_dca_nitrogeno.csv` (biomasa seca de *Chlorella vulgaris*
+con tres fuentes de nitrógeno, diseño completamente al azar),
+`datos_bloques_nitrogeno.csv` (el mismo experimento por estante del
+incubador, diseño en bloques) y `datos_factorial_clorofila.csv`
+(concentración de clorofila a según temperatura y tiempo de extracción,
+diseño factorial 2 x 2). La asignación de tratamientos a las unidades se
+genera en el script con aleatorización.
 
 ## Licencia
 
