@@ -46,6 +46,10 @@
 # --------------------------------------------------------------------------
 library(tidyverse)
 
+# Fijar la configuración regional en UTF-8 para que los acentos de los
+# títulos y las etiquetas se vean bien en cualquier equipo.
+Sys.setlocale("LC_ALL", "C.UTF-8")
+
 # --------------------------------------------------------------------------
 # 2. Cómo elegir el diseño según la pregunta
 # --------------------------------------------------------------------------
