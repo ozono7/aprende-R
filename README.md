@@ -9,8 +9,8 @@ químico-científicas y académicas, resueltos en R con tidyverse y gráficas cl
 
 ## Cómo funciona
 
-Cada miércoles se publica una lección nueva. Las lecciones son secuenciales:
-cada una usa lo que se aprendió en las anteriores, como un experimento real
+Se publica una lección cada 14 días. La siguiente lección (04, ANOVA de una vía) sale el sábado 2026-11-21. Las lecciones son secuenciales:
+cada una usa lo que se aprendió en las anteriores, como un experimento
 que avanza paso a paso, desde el contexto y la toma de datos hasta el
 análisis estadístico.
 
@@ -21,6 +21,14 @@ puedes correr tal cual en tu computadora. Solo necesitas R y el paquete
 ```r
 install.packages("tidyverse")
 ```
+
+## Instalación
+
+Para correr las lecciones necesitas R, un editor (RStudio o Positron) y el
+paquete `tidyverse`. La guía paso a paso para Windows, Mac y Linux está en
+[INSTALACION.md](INSTALACION.md). Si no puedes instalar nada en tu equipo,
+ahí también están las opciones gratuitas en la nube (Posit Cloud, Google
+Colab y Kaggle), que corren R en el navegador.
 
 ## Lecciones
 
@@ -44,7 +52,7 @@ numeración secuencial de las lecciones 01-08: son una sección aparte.
 ## Próximas lecciones
 
 La serie continúa con visualización y análisis avanzados, siempre con
-problemas reales del laboratorio y de la academia:
+problemas del laboratorio y de la academia:
 
 - **04 — ANOVA de una vía:** comparar el crecimiento entre condiciones de luz.
 - **05 — Prueba de Dunnett:** comparar cada tratamiento contra un control.
@@ -68,7 +76,7 @@ problemas reales del laboratorio y de la academia:
 ## Datos
 
 Los datos de las lecciones son simulados con fines didácticos, con valores
-realistas para el laboratorio. La lección 01 genera el archivo
+plausibles para el laboratorio. La lección 01 genera el archivo
 `datos_chlorella.csv`, que usa la lección 02. Las lecciones de biología
 celular usan sus propios archivos: `datos_diametros_chlorella.csv` (30
 mediciones del diámetro de *Chlorella vulgaris*, dentro del rango publicado

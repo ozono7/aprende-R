@@ -10,7 +10,7 @@
 # Serie Aprende R — Biología celular
 #
 # Descripción: Primera lección de biología celular de la serie. Se parte
-#   de mediciones reales del diámetro de células de Chlorella vulgaris
+#   de mediciones del diámetro de células de Chlorella vulgaris
 #   (archivo datos_diametros_chlorella.csv), se resumen en R y se calcula
 #   el volumen de la célula A PARTIR DE LOS DATOS. Después se comparan los
 #   tamaños típicos de los organelos con el tamaño de la célula, para

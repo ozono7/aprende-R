@@ -11,7 +11,7 @@
 # Serie "Aprende R" — Lección 03
 #
 # Descripción: Cómo planear un experimento antes de tocar un matraz.
-#   Se comparan tres diseños con datos reales de laboratorio: el diseño
+#   Se comparan tres diseños con datos de laboratorio: el diseño
 #   completamente al azar (DCA), el diseño en bloques completos al azar
 #   (DBCA) y el diseño factorial 2 x 2. En cada diseño la asignación de
 #   los tratamientos a las unidades experimentales se hace con
@@ -426,7 +426,7 @@ ggsave("03_factorial_clorofila.png", grafica_factorial,
 #   set.seed() la asignación es reproducible.
 # - La repetición (aquí, n = 4 en el DCA y los bloques, n = 3 en el
 #   factorial) es lo que permite estimar la variación entre unidades
-#   iguales y decidir si las diferencias entre tratamientos son reales.
+#   iguales y decidir si las diferencias entre tratamientos se deben al tratamiento.
 # - En un diseño en bloques, cada bloque contiene todos los
 #   tratamientos, y el bloque entra en el ANOVA para que su variación
 #   no contamine la comparación entre tratamientos.

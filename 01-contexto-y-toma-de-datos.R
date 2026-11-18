@@ -210,7 +210,7 @@ ggsave("01_exploracion_caja.png", grafica_caja,
 # --------------------------------------------------------------------------
 # Qué aprendimos
 # --------------------------------------------------------------------------
-# - Los datos se toman en el laboratorio como mediciones reales (OD680 por
+# - Los datos se toman en el laboratorio como mediciones (OD680 por
 #   día y por réplica) y se ordenan en formato tidy para poder analizarlos.
 # - Antes de analizar, hay que mirar los datos: un gráfico de puntos contra
 #   el tiempo muestra el crecimiento, y un gráfico de caja compara los

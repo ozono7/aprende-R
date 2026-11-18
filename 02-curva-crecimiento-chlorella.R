@@ -195,7 +195,7 @@ ggsave("02_velocidad_crecimiento_chlorella.png", grafica_mu,
 #   (0.95 días), intermedio con luz blanca (1.06 días) y mayor con luz
 #   roja (1.26 días).
 #
-# - En un experimento real, estas diferencias se confirmarían con una
+# - En un experimento, estas diferencias se confirmarían con una
 #   prueba estadística (por ejemplo, prueba t o ANOVA). Eso es justo lo
 #   que veremos en las próximas lecciones.
 
