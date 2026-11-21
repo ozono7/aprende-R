@@ -9,7 +9,7 @@ químico-científicas y académicas, resueltos en R con tidyverse y gráficas cl
 
 ## Cómo funciona
 
-Se publica una lección cada 14 días. La siguiente lección (04, ANOVA de una vía) sale el sábado 2026-11-21. Las lecciones son secuenciales:
+Se publica una lección cada 14 días. La siguiente lección (05, Prueba de Dunnett) sale el sábado 2026-12-05. Las lecciones son secuenciales:
 cada una usa lo que se aprendió en las anteriores, como un experimento
 que avanza paso a paso, desde el contexto y la toma de datos hasta el
 análisis estadístico.
@@ -37,6 +37,7 @@ Colab y Kaggle), que corren R en el navegador.
 | 01 | `01-contexto-y-toma-de-datos.R` | El experimento, cómo se toman los datos en el laboratorio, datos ordenados (tidy data) y primer análisis exploratorio. |
 | 02 | `02-curva-crecimiento-chlorella.R` | Curva de crecimiento de *Chlorella vulgaris*, velocidad específica de crecimiento (mu) y gráficas claras. |
 | 03 | `03-diseno-de-experimentos.R` | Diseño de experimentos: completamente al azar, bloques al azar y factorial; cómo elegir el diseño según la pregunta. |
+| 04 | `04-anova-de-una-via.R` | ANOVA de una vía: remoción de azul de metileno con carbón activado; valor F, valor p, eta cuadrado, supuestos y prueba de Tukey. Datos: `datos_remocion_azul_metileno.csv`. |
 
 ## Biología celular
 
@@ -54,7 +55,6 @@ numeración secuencial de las lecciones 01-08: son una sección aparte.
 La serie continúa con visualización y análisis avanzados, siempre con
 problemas del laboratorio y de la academia:
 
-- **04 — ANOVA de una vía:** comparar el crecimiento entre condiciones de luz.
 - **05 — Prueba de Dunnett:** comparar cada tratamiento contra un control.
 - **06 — Curva de calibración y regresión lineal:** construir una curva de calibración, R², límite de detección y cuantificación.
 - **07 — Prueba t:** comparar dos grupos (por ejemplo, dos métodos de extracción).
@@ -91,6 +91,10 @@ incubador, diseño en bloques) y `datos_factorial_clorofila.csv`
 (concentración de clorofila a según temperatura y tiempo de extracción,
 diseño factorial 2 x 2). La asignación de tratamientos a las unidades se
 genera en el script con aleatorización.
+
+La lección 04 usa `datos_remocion_azul_metileno.csv` (porcentaje de
+remoción de azul de metileno con cuatro dosis de carbón activado,
+0.5, 1.0, 2.0 y 4.0 g/L, con 5 réplicas por dosis).
 
 ## Licencia
 
